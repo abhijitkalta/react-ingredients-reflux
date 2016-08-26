@@ -12,6 +12,19 @@ var service = {
         .catch((error) => {
           console.error(error);
         });
+  },
+
+  post: function(url, ingredient){
+     return fetch(baseUrl + url , {
+          method: 'POST',
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ingredient)
+      }).then(function(response){
+        return response;
+      });
   }
 } ;
 
